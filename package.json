@@ -1,0 +1,28 @@
+{
+  "name": "SWE_angular",
+  "version": "1.0.0",
+  "description": "bla",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "^3.8.11",
+    "webserver": "^1.1.2",
+    "bower": "^1.4.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/doubl3p/SWE_angular.git"
+  },
+  "keywords": [
+    "bla"
+  ],
+  "author": "bla",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/doubl3p/SWE_angular/issues"
+  },
+  "homepage": "https://github.com/doubl3p/SWE_angular"
+}

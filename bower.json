@@ -1,0 +1,22 @@
+{
+  "name": "SWE_angular",
+  "version": "1.0.0",
+  "homepage": "https://github.com/doubl3p/SWE_angular",
+  "authors": [
+    "Paul Pelludat <pelludat.paul@googlemail.com>"
+  ],
+  "description": "bla",
+  "main": "bla",
+  "keywords": [
+    "bla"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
