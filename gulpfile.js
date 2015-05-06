@@ -38,7 +38,7 @@ gulp.task('bundle', function () {
 
 // webserver hochfahren
 // in Eckigen Klammer, das was vorher gemacht werden sollen, bevotr webserver gestartet wird
-gulp.task('webserver', ['bundle', 'html', 'js', 'proxy'], function () {
+gulp.task('webserver', ['bundle', 'html', 'js'], function () {
   // welche Dateien
   gulp.src('build')
       .pipe(webserver({
