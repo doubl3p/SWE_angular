@@ -5,10 +5,10 @@
   "authors": [
     "Paul Pelludat <pelludat.paul@googlemail.com>"
   ],
-  "description": "bla",
-  "main": "bla",
+  "description": "webshop prototyp",
+  "main": "webshop",
   "keywords": [
-    "bla"
+    "webshop, angular"
   ],
   "license": "MIT",
   "private": true,
