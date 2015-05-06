@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html ng-app="startpage"> // modul startpage wird mit hmtl Seite geladen
+<head>
+  <link rel="shortcut icon" href="">
+  <title>WebShop DJKP</title>
+  <meta charset="utf-8">
+</head>
+
+<body ng-controller="startpageCtrl"> // startpageCtrl controller wird geladen; somit scope in body tag
+
+  <ng-include src="'templates/navigation.html'"></ng-include>
+  <div class="side-padding"></div>
+  <script type="text/javascript" src="lib/bootstrap/dist/vendor/bootstrap.js"></script>
+</body>
+</html>
