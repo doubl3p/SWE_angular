@@ -2,6 +2,8 @@
  * Created by PePa on 06.05.2015.
  */
 
+// Runde klammer auf beschränkt globlae Verfügbarkeit von Funktionen! wie genau
+// http://benalman.com/news/2010/11/immediately-invoked-function-expression
 (function () {
 
     //create a modul
@@ -17,4 +19,4 @@
         lastname: 'Pham Le',
         age: '55'
     }
-});
+}) ();

@@ -1,6 +1,7 @@
 ------------------------------------------------------------------------------------------------------------------------
 # What is Bower?
 SHORT: Package Manager for dependencies (libraries and frameworks)
+  --> für das Endprodukt
 
 LONG:
 There are now more libraries and frameworks available for front-end development than ever before.
@@ -19,6 +20,7 @@ http://blog.teamtreehouse.com/getting-started-bower
 ------------------------------------------------------------------------------------------------------------------------
 # What is Gulp?
 SHORT: = Task Runner basierend auf Node.js (Automatisierung von Prozessen)
+  --> für die Entwicklung
 
 LONG:
 Ob Minifizierung von Javascript, CSS und HTML, verlustlose Optimierung von Bildern oder z.B. die Kompilierung von
@@ -36,12 +38,13 @@ Plugins
 
 Installing Packages:
 package.json
+  --> devDependecies
   --> Packetmanager notiert Version der Gulp-Module und welche installiert wurden
   --> nicht für Betrieb notwendig
   --> npm init = Command at the root of your project will launch an interactive program that will create package.json for you
   --> npm install gulp = install / update gulp module
 
-gulpfile.js
+gulpfile.js entspricht pom.xml von maven
   --> Tasks, die das Building Tool für uns erledigen soll
 
 More Infos:
