@@ -1,0 +1,32 @@
+/**
+ * Created by PePa on 16.05.2015.
+ */
+
+(function () {
+    // wirft einen error, wenn man z.B. einer nicht deklarierten Variable einen Wert zuweisen möchte etc.
+    'use strict';
+
+    angular.module('webapp',
+        ['ui.router']);
+        // angular Services werden zweimal angegeben. Da Parameter bei Minifien z.B. zu a und b werden
+        // Parameter kann man benennen wir man mag
+        //.config('$urlRouterProvider', 'StateProvider', function($urlRouterProvider, $statProvider){
+        //
+        //    //wenn man hinter '#/' etwas eingibt, dass es nicht gibt wird hier hin geroutet
+        //    $urlRouterPrivider.otherwise("/");
+        //
+        //    $stateProvider
+        //        .state("home", {
+        //            url: '/',
+        //            templateUrl: '../templates/home.html'
+        //        })
+        //        .state("about", {
+        //            url: '/about',
+        //            templateUrl: '../templates/about.html'
+        //        });
+        //
+        //
+        //});
+
+
+})();

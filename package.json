@@ -7,21 +7,7 @@
   "devDependencies": {
     "gulp": "^3.8.8",
     "gulp-bundle-assets": "^2.17.1",
-    "gulp-concat": "^2.4.0",
-    "gulp-if": "^1.2.5",
-    "gulp-jshint": "^1.8.4",
-    "gulp-ng-annotate": "^0.3.0",
-    "gulp-plumber": "^0.6.5",
-    "gulp-rimraf": "^0.1.0",
-    "gulp-uglify": "^1.0.1",
-    "gulp-util": "^3.0.1",
     "gulp-webserver": "^0.7.2",
-    "gulp-sass": "^1.3.3",
-    "jshint-stylish": "^0.4.0",
-    "connect": "^3.3.1",
-    "proxy-middleware": "^0.7.0",
-    "lazypipe": "^0.2.2",
-    "bower": "^1.4.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -33,7 +19,7 @@
   "keywords": [
     "bla"
   ],
-  "author": "bla",
+  "author": "",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/doubl3p/SWE_angular/issues"

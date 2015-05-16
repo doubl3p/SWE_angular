@@ -1,15 +1,26 @@
 <!DOCTYPE html>
-<html ng-app="startpage"> // modul startpage wird mit hmtl Seite geladen
+
+<!--  modul moeble-webapp wird mit hmtl Seite geladen; lädt alle anderen module  -->
+<html ng-app='webapp'>
 <head>
   <link rel="shortcut icon" href="">
-  <title>WebShop DJKP</title>
+  <title>moeble-webapp</title>
   <meta charset="utf-8">
 </head>
 
-<body ng-controller="startpageCtrl"> // startpageCtrl controller wird geladen; somit scope in body tag
-  <p>TEST</p>p>
-  <ng-include src="'templates/navigation.html'"></ng-include>
-  <div class="side-padding"></div>
-  <script type="text/javascript" src="lib/bootstrap/dist/vendor/bootstrap.js"></script>
+<body>
+  <div>
+    <header ng-include ="'templates/navigation.html'"></header>
+    <div></div>
+    <p>dgfdg</p>
+    <footer ng-include ="'templates/footer.html'"></footer>
+  </div>
+
+  <!-- dependecies aus bower.js-->
+  <script type="text/javascript" src="bower_components/angular/angular.js"></script>
+  <script type="text/javascript" src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+
+  <!-- dependecies aus app.js-->
+  <script type="text/javascript" src="base/app.js"></script>
 </body>
 </html>
