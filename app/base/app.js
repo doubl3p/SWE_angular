@@ -7,7 +7,7 @@
     'use strict';
 
     angular.module('webapp',
-        ['startpage', 'ui.router'])
+        ['home', 'startpage', 'ui.router'])
 
          //angular Services werden zweimal angegeben. Da Parameter bei Minifien z.B. zu a und b werden
          //Parameter kann man benennen wir man mag
@@ -19,11 +19,18 @@
             $stateProvider
                 .state('home', {
                     url: '/',
-                    templateUrl: 'templates/home.html'
+                    templateUrl: 'templates/home.html',
+                    controller: 'homeCtrl'
+
                 })
                 .state('about', {
                     url: '/about',
-                    templateUrl: 'templates/about.html'
+                    templateUrl: 'templates/about.html',
+                    controller: 'aboutCtrl'
+                })
+                .state('contact', {
+                    url: '/contact',
+                    templateUrl: 'templates/contact.html'
                 });
 
 
