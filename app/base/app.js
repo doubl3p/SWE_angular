@@ -7,7 +7,7 @@
     'use strict';
 
     angular.module('webapp',
-        ['home', 'startpage', 'ui.router'])
+        ['home', 'ui.router'])
 
          //angular Services werden zweimal angegeben. Da Parameter bei Minifien z.B. zu a und b werden
          //Parameter kann man benennen wir man mag
