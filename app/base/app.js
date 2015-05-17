@@ -33,7 +33,6 @@
                     templateUrl: 'templates/contact.html'
                 });
 
-
         }]);
 
 

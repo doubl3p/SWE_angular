@@ -1,7 +1,5 @@
 'use strict';
 
-
-
 var gulp = require('gulp'),
     //lädt alle plugins die mit gulp in pachage.josn mit gulp beginnen. Werden erst dann geladen wenn . Operator aufgerufen wird. Rest müssen wir mit require machen
     //plugins = require('gulp-load-plugins')(),
