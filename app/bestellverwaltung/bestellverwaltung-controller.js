@@ -1,14 +1,12 @@
-/**
- * Created by PePa on 17.05.2015.
- */
-
 (function () {
 
-    var app = angular.module('bestellVerw',[]);
+    function bestellVerwCtrl(){
+        var vs = this;
+    }
 
-//create a controller
-    app.controller('bestellVerwCtrl', function() {
 
-        }
-    );
-}) ();
+
+    angular.module('bestellVerw', [])
+        .controller('bestellVerwCtrl', bestellVerwCtrl);
+
+})();

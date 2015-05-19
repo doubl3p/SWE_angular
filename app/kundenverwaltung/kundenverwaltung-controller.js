@@ -4,11 +4,13 @@
 
 (function () {
 
-    var app = angular.module('kundenVerw',[]);
+    function kundenCtrl(){
+        var vs = this;
 
-//create a controller
-    app.controller('kundenVerwCtrl', function() {
+    }
 
-        }
-    );
-}) ();
+
+    angular.module('kundenVerw', [])
+        .controller('kundenCtrl', kundenCtrl);
+
+})();

@@ -1,14 +1,12 @@
-/**
- * Created by PePa on 17.05.2015.
- */
-
 (function () {
 
-    var app = angular.module('reg',[]);
+ function regCtrl(){
+     var vs = this;
+ }
 
-//create a controller
-    app.controller('regCtrl', function() {
 
-        }
-    );
-}) ();
+
+    angular.module('reg', [])
+        .controller('regCtrl', regCtrl);
+
+})();

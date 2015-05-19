@@ -1,14 +1,12 @@
-/**
- * Created by PePa on 17.05.2015.
- */
-
 (function () {
 
-    var app = angular.module('artikelVerw',[]);
+    function artikelVerwCtrl(){
+        var vs = this;
+    }
 
-//create a controller
-    app.controller('artikelVerwCtrl', function() {
 
-        }
-    );
-}) ();
+
+    angular.module('artikelVerw', [])
+        .controller('artikelVerwCtrl', artikelVerwCtrl);
+
+})();
