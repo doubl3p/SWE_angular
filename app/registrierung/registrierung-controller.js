@@ -1,8 +1,8 @@
 (function () {
 
- function regCtrl(){
-     var vs = this;
- }
+    function regCtrl(){
+        var vs = this;
+    }
 
 
 
