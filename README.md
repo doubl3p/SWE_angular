@@ -54,13 +54,37 @@ http://mo.phlow.de/gulp/#was-ist-gulp
 # Run our Projekt
 
 NodeJS muss lokal installiert sein.
-Nach der Installation von Node folgenden Befehl ausführen:
-  --> npm install -g gulp bower
+ Umgebungsvariable setzen:
 
-- Projekt auschecken
-- In das Verzeichnis des Projektes wechseln
-- In der Konsole folgende Befehle ausführen:
-  --> npm install
-  --> bower install
-  --> gulp webserver
-- Seite ist nun auf http://localhost:9000 erreichbar
+  ```
+  NODEJS_HOME   C:\Program Files (x86)\nodejs
+  ```
+
+ und in PATH ganz vorne einfügen
+  ```
+  %NODEJS_HOME%;
+  ```
+ Nach der Installation von Node folgenden Befehl ausführen:
+
+ ```
+ npm install -g gulp bower
+ (werden hier hin global abgelegt C:\Users\DEINUSER\AppData\Roaming\npm\node_modules)
+  ```
+     Projekt auschecken
+     In das Verzeichnis des Projektes wechseln
+     In der Konsole folgende Befehle ausführen:
+
+
+  ```
+  npm install
+  ```
+
+  ```
+  bower install
+  ```
+
+  ```
+  gulp webserver
+  ```
+
+ Seite ist nun auf http://localhost:9000 erreichbar
