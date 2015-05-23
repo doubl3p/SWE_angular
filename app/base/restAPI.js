@@ -1,19 +1,32 @@
 
+//
+//(function () {
+//
+//    function restAPICtrl(){
+//
+//    function getKundeById($resource){
+//
+//        var kunde = $resource("localhost:8443/shop/rest/kunden/:id", {id: "@id"}, {});
+//        var selected = null;
+//
+//
+//        kunde.get({id: '300'}, function(data){
+//            this.selected = data;
+//        })
+//    }
+//}
+//
+//
+//
+//angular.module('restAPI', ['ngResource'])
+//    .controller('restAPICtrl', ["$resource", restAPICtrl] );
+//
+//})();
+//
 
-(function () {
-
-    function restAPICtrl(){
-
-        function getKundeById($resource, idx){
-            var vs = this;
-             var bla = $resource("localhost:8443/kunden/:id", {id: idx}, {'get': {method: 'get'}});
-            return bla;
-        }
-    }
+    angular.module('restAPI', [])
+        .factory('UserService', function ($resource) {
+            return $resource('http://jsonplaceholder.typicode.com/users/:user',{user: "@user"});
+        });
 
 
-
-    angular.module('restAPI', ['ngResource'])
-        .controller('restAPICtrl', ["$resource", restAPICtrl] );
-
-})();

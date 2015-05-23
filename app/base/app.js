@@ -15,7 +15,7 @@
             $stateProvider
                 .state('artikel', {
                     url: '/artikel',
-                    templateUrl: 'aritkelverwaltung/artikelverwaltung.html',
+                    templateUrl: 'artikelverwaltung/artikelverwaltung.html',
                     controller: 'artikelVerwCtrl'
                 })
 
