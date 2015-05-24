@@ -24,9 +24,15 @@
 //})();
 //
 
+    //Beispiel von YouTube
+
+    //angular.module('restAPI', [])
+    //.factory('UserService', function ($resource) {
+    //    return $resource('http://jsonplaceholder.typicode.com/users/:user',{user: "@user"});
+    //});
+
+
     angular.module('restAPI', [])
         .factory('UserService', function ($resource) {
-            return $resource('http://jsonplaceholder.typicode.com/users/:user',{user: "@user"});
+            return $resource('https://localhost:8443/shop/rest/kunden/:id',{id: "@id"});
         });
-
-
