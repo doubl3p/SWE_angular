@@ -5,7 +5,6 @@
     }
 
 
-
     angular.module('artikelVerw', [])
         .controller('artikelVerwCtrl', artikelVerwCtrl);
 

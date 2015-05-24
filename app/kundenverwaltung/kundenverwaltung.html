@@ -1,14 +1,23 @@
 
-<div ng-controller = kundenVerwCtrl>
-    <tr>
-        <td>fdgg</td>
-        <td>{{kundenVerwCtrl.test}}</td>
-    </tr>
-</div>
 
-<div>
-    <tr ng-repeat="user in kundenVerwCtrl.users">
-        <td>{{user.name}}</td>
-        <td>{{user.email}}</td>
-    </tr>
+<!--   also wichtig ist bei dem Zugirff auf den Kontroller ng-controller = "kundenVerwCtrl as kunde" und vor-->
+<!--   allem das kundenVerwCtrl as kunde!!! dann geht es und das ersetzt scope komplett. im Kontroller Variablen mit-->
+<!--   this.blar = "asdfasdf"; deklarieren-->
+<div ng-controller = "kundenVerwCtrl as kunde">
+    <div >
+        <tr>
+            <td>fdgg</td>
+            <td>{{kunde.test}}</td>
+        </tr>
+    </div>
+
+    <div>
+        <ul>
+            <li ng-repeat="user in kunde.users">
+                {{user.name}}
+            </li>
+
+        </ul>
+
+    </div>
 </div>
