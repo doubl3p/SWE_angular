@@ -12,17 +12,16 @@
 </head>
 
 <body>
-  <div>
-    <header ng-include ="'templates/navigation.html'"></header>
-    <!-- hier wird das HTML vom Router rein geladen. Where the magic happens! -->
-    <div class="side-padding" ui-view></div>
-  </div>
+
 
   <!-- dependecies aus bower.js-->
   <script type="text/javascript" src="bower_components/angular/angular.js"></script>
-  <script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
+  <!--<script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>-->
   <script type="text/javascript" src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-  <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+  <!--<script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.js"></script>-->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
   <script type="text/javascript" src="bower_components/angular-resource/angular-resource.js"></script>
 
 
@@ -33,6 +32,12 @@
   <script type="text/javascript" src="kundenverwaltung/kundenverwaltung-controller.js"></script>
   <script type="text/javascript" src="artikelverwaltung/artikelverwaltung-controller.js"></script>
   <script type="text/javascript" src="bestellverwaltung/bestellverwaltung-controller.js"></script>
+
+  <div>
+    <header ng-include ="'templates/navigation.html'"></header>
+    <!-- hier wird das HTML vom Router rein geladen. Where the magic happens! -->
+    <div class="side-padding" ui-view></div>
+  </div>
 
 </body>
 </html>

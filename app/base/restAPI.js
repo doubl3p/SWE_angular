@@ -26,10 +26,10 @@
 
     //Beispiel von YouTube
 
-    //angular.module('restAPI', [])
-    //.factory('UserService', function ($resource) {
-    //    return $resource('http://jsonplaceholder.typicode.com/users/:user',{user: "@user"});
-    //});
+//angular.module('restAPI', [])
+//    .factory('UserService', function ($resource) {
+//        return $resource('http://jsonplaceholder.typicode.com/users/:user',{user: "@user"});
+//   });
 
 
     angular.module('restAPI', [])

@@ -25,6 +25,12 @@
                     controller: 'kundenVerwCtrl'
                 })
 
+                .state('login', {
+                    url: '/meinKonto/login',
+                    templateUrl: 'kundenverwaltung/login.html',
+                    controller: 'kundenVerwCtrl'
+                })
+
                 .state('bestellung', {
                     url: '/meinKonto/bestellung',
                     templateUrl: 'bestellverwaltung/bestellverwaltung.html',
