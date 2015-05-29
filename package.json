@@ -1,12 +1,14 @@
 {
-  "name": "package.json",
+  "name": "SWE_angular",
   "version": "1.0.0",
-  "description": "------------------------------------------------------------------------------------------------------------------------ # What is Bower? SHORT: Package Manager for dependencies (libraries and frameworks)   --> f�r das Endprodukt",
+  "description": "bla",
   "main": "gulpfile.js",
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
     "gulp": "^3.8.8",
     "gulp-bundle-assets": "^2.17.1",
     "gulp-webserver": "^0.7.2"
+
   },
   "devDependencies": {},
   "scripts": {
