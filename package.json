@@ -1,0 +1,28 @@
+{
+  "name": "package.json",
+  "version": "1.0.0",
+  "description": "------------------------------------------------------------------------------------------------------------------------ # What is Bower? SHORT: Package Manager for dependencies (libraries and frameworks)   --> f�r das Endprodukt",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "^3.8.8",
+    "gulp-bundle-assets": "^2.17.1",
+    "gulp-webserver": "^0.7.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/doubl3p/SWE_angular.git"
+  },
+  "keywords": [
+    "bla"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/doubl3p/SWE_angular/issues"
+  },
+  "homepage": "https://github.com/doubl3p/SWE_angular"
+}
