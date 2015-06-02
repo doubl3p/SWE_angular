@@ -46,26 +46,26 @@ angular.module('restAPI', [])
 
         var loginname = "admin";
         var password = "p";
-        var basic = "https://localhost:8443/shop/rest/iam/login";
+        var basic = "/shop/rest/kunden";
         var basicAuth = 'Basic ' + btoa(loginname + ':' + password);
 
-        return $resource(basic, {}, {login: {method: 'GET', headers: {Authorization: basicAuth}}});
+        return $resource(basic, {}, {get: {method: 'GET', headers: {Authorization: basicAuth}}});
     });
 
 
-// $http header anpassen
-angular.module('restAPI', [])
-    .factory('UserService', function ($resource, $window, $http) {
-
-
-        var btoa = $window.btoa;
-
-        var loginname = "admin";
-        var password = "p";
-        var basic = "https://localhost:8443/shop/rest/iam/login";
-        var basicAuth = 'Basic ' + btoa(loginname + ':' + password);
-
-        $http.defaults.headers.common['Authorization'] = 'Basic ' + 'admin:p';
-        return $resource(basic, {}, {login: {method: 'GET'}});
-    });
+//// $http header anpassen
+//angular.module('restAPI', [])
+//    .factory('UserService', function ($resource, $window, $http) {
+//
+//
+//        var btoa = $window.btoa;
+//
+//        var loginname = "admin";
+//        var password = "p";
+//        var basic = "https://localhost:8443/shop/rest/iam/login";
+//        var basicAuth = 'Basic ' + btoa(loginname + ':' + password);
+//
+//        $http.defaults.headers.common['Authorization'] = 'Basic ' + 'admin:p';
+//        return $resource(basic, {}, {login: {method: 'GET'}});
+//    });
 

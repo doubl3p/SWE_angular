@@ -10,7 +10,7 @@
         s.test =  "Mega";
 
         // das hier geht wunderbar und ruft z.B. alle Kunden ab, die es gibt.
-        this.users = UserService.login();
+        this.users = UserService.query();
 
         // Die zweit Variante sieht ungefähr so aus:
         // prich man muss nicht 2 Methoden implementieren für z.B. getKundeById und getAlleKunden sondern nur eine
