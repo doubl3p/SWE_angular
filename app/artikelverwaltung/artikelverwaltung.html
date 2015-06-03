@@ -3,14 +3,15 @@
     <h2>Angebot der Woche</h2>
     <br>
 
-    <div class="col-sm-12">
-        <div class="row">
+
+    <div class="col-sm-12" ng-controller="kundenVerwCtrl as kunde">
+        <div>
             <div class="col-sm-4">
                 <div class="thumbnail">
                     <img src="images/chesterfield_black.jpg">
                     <div class="caption">
-                        <h3>Regal</h3>
-                        <p>Details</p>
+                        <h3>{{kunde.users[0].bezeichnung}}</h3>
+                        <p>{{kunde.users[0].preis}} Euro</p>
                         <p>
                             <a href="#" class="btn btn-primary" role="button">Details</a>
                             <a href="#" class="btn btn-default" role="button">zum Warenkorb</a>
@@ -18,13 +19,15 @@
                     </div>
                 </div>
             </div>
+        </div>
 
+        <div>
             <div class="col-sm-4">
                 <div class="thumbnail">
-                    <img src="images/sessel.jpg">
+                    <img src="images/chesterfield_black.jpg">
                     <div class="caption">
-                        <h3>Regal</h3>
-                        <p>Details</p>
+                        <h3>{{kunde.users[1].bezeichnung}}</h3>
+                        <p>{{kunde.users[1].preis}} Euro</p>
                         <p>
                             <a href="#" class="btn btn-primary" role="button">Details</a>
                             <a href="#" class="btn btn-default" role="button">zum Warenkorb</a>
@@ -32,14 +35,15 @@
                     </div>
                 </div>
             </div>
+        </div>
 
-
+        <div>
             <div class="col-sm-4">
                 <div class="thumbnail">
-                    <img src="images/chesterfield_white.jpg">
+                    <img src="images/chesterfield_black.jpg">
                     <div class="caption">
-                        <h3>Regal</h3>
-                        <p>Details</p>
+                        <h3>{{kunde.users[2].bezeichnung}}</h3>
+                        <p>{{kunde.users[2].preis}} Euro</p>
                         <p>
                             <a href="#" class="btn btn-primary" role="button">Details</a>
                             <a href="#" class="btn btn-default" role="button">zum Warenkorb</a>
@@ -49,5 +53,24 @@
             </div>
         </div>
     </div>
-</div>
 
+
+<br>
+
+<div class="col-sm-12" ng-controller="kundenVerwCtrl as kunde">
+    <div  ng-repeat="artikel in kunde.users">
+        <div class="col-sm-3">
+            <div class="thumbnail">
+                <img src="images/chesterfield_black.jpg">
+                <div class="caption">
+                    <h3>{{artikel.bezeichnung}}</h3>
+                    <p>{{artikel.preis}} Euro</p>
+                    <p>
+                        <a href="#" class="btn btn-primary" role="button">Details</a>
+                        <a href="#" class="btn btn-default" role="button">zum Warenkorb</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

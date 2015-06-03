@@ -1,7 +1,6 @@
-
 //
-//(function () {
-//
+(function () {
+////
 //    function restAPICtrl(){
 //
 //    function getKundeById($resource){
@@ -38,22 +37,58 @@
 //    });
 
 // alles über 4rescource
-angular.module('restAPI', [])
-    .factory('UserService', function ($resource, $window) {
+//angular.module('restAPI', [])
+//    .factory('UserService', function ($resource, $window) {
+//
+//        var vs = this;
+//
+//
+//
+//        var btoa = $window.btoa;
+//
+//        var loginname = "admin";
+//        var password = "p";
+//        var basic = "/shop/rest/katalog";
+//        var basicAuth = 'Basic ' + btoa(loginname + ':' + password);
+//
+//        //vs.getKunden =
+//
+//        return $resource(basic, {}, {get: {method: 'GET', headers: {Authorization: basicAuth}}});
+//    });
 
+    ////////////////////////////////////////////////////////////////
+    function RestService(MoebelREST) {
+        return {
 
+            getKunden: function () {
+
+            return MoebelREST("/kunden");
+            }
+        }
+    }
+
+    function MoebelREST ($window, $resource, host) {
+
+        var vs = this;
         var btoa = $window.btoa;
-
         var loginname = "admin";
         var password = "p";
-        var basic = "/shop/rest/kunden";
+        var basic = "/shop/rest";
         var basicAuth = 'Basic ' + btoa(loginname + ':' + password);
+        var reqURL = basic + host;
 
-        return $resource(basic, {}, {get: {method: 'GET', headers: {Authorization: basicAuth}}});
-    });
+        return return $resource(reqURL, {}, {get: {method: 'GET', headers: {Authorization: basicAuth}}});
+    }
 
 
-//// $http header anpassen
+        angular.module('webapp')
+            .service('RestService', RestService)
+            .factory('MoebelREST', MoebelREST);
+
+
+})();
+
+// $http header anpassen
 //angular.module('restAPI', [])
 //    .factory('UserService', function ($resource, $window, $http) {
 //
@@ -65,7 +100,7 @@ angular.module('restAPI', [])
 //        var basic = "https://localhost:8443/shop/rest/iam/login";
 //        var basicAuth = 'Basic ' + btoa(loginname + ':' + password);
 //
-//        $http.defaults.headers.common['Authorization'] = 'Basic ' + 'admin:p';
-//        return $resource(basic, {}, {login: {method: 'GET'}});
+//        $http.defaults.headers.common['Authorization'] = basicAuth;
+//        return $resource(basic, {}, {get: {method: 'GET'}});
 //    });
 

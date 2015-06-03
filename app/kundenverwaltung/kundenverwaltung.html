@@ -3,21 +3,21 @@
 <!--   also wichtig ist bei dem Zugirff auf den Kontroller ng-controller = "kundenVerwCtrl as kunde" und vor-->
 <!--   allem das kundenVerwCtrl as kunde!!! dann geht es und das ersetzt scope komplett. im Kontroller Variablen mit-->
 <!--   this.blar = "asdfasdf"; deklarieren-->
-<div ng-controller = "kundenVerwCtrl as kunde">
-    <div >
-        <tr>
-            <td>fdgg</td>
-            <td>{{kunde.test}}</td>
-        </tr>
-    </div>
 
-    <div>
-        <ul>
-            <li ng-repeat="user in kunde.users">
-                {{user.id}}
-            </li>
-
-        </ul>
-
+<div class="col-sm-12" ng-controller="kundenVerwCtrl as kunde">
+    <div  ng-repeat="artikel in kunde.users">
+        <div class="col-sm-3">
+            <div class="thumbnail">
+                <img src="images/chesterfield_black.jpg">
+                <div class="caption">
+                    <h3>{{artikel.bezeichnung}}</h3>
+                    <p>{{artikel.preis}} Euro</p>
+                    <p>
+                        <a href="#" class="btn btn-primary" role="button">Details</a>
+                        <a href="#" class="btn btn-default" role="button">zum Warenkorb</a>
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
