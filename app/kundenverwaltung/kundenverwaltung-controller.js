@@ -4,13 +4,31 @@
 
 (function () {
 
-    function kundenCtrl(RestService){
+    function kundenVerwCtrl(KundenService, KundeIdService){
         var s = this;
 
-        s.test =  "Mega";
 
         // das hier geht wunderbar und ruft z.B. alle Kunden ab, die es gibt.
-        this.users = RestService.getKunden();
+        s.users = KundenService.query();
+
+
+
+        //funktioniert noch nicht
+        //s.getUserId = function (kundeId) {
+        //    KundeIdService.get({id: kundeId})
+        //};
+        //
+        //s.addUser = function(){
+        //    KundeIdService.save({id: 403},{identity: {vorname: "pa", nachname: "pa", email: "papa@hs-karlsruhe.de"}});
+        //};
+        //
+        //s.updateUser = function(kundeId, putVorname, putNachname, putEmail){
+        //    KundeIdService.update({id: kundeId},{identity: {vorname: putVorname, nachname: putNachname, email: putEmail}})
+        //};
+
+
+
+
 
         // Die zweit Variante sieht ungefähr so aus:
         // prich man muss nicht 2 Methoden implementieren für z.B. getKundeById und getAlleKunden sondern nur eine
@@ -36,6 +54,6 @@
 
 
     angular.module('kundenVerw', [])
-        .controller('kundenVerwCtrl', kundenCtrl);
+        .controller('kundenVerwCtrl', kundenVerwCtrl);
 
 })();

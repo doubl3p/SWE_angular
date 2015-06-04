@@ -12,52 +12,32 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-            <!-- Artikel DropDown-->
-            <ul class="nav navbar-nav">
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Artikel <span class="caret"></span></a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="#/artikel">Angebote der Woche</a></li>
-                        <li><a >Kategorie 2</a></li>
-                        <li><a href="#">Kategorie 3</a></li>
-                        <li class="divider"></li>
+                <!-- Suchkategorie DropDown-->
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Kategorie<span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#/artikel">Artikel</a></li>
+                            <li><a href="#/kunden">Kunden</a></li>
+                        </ul>
+                    </li>
+                </ul>
 
-                        <!-- Artikel hinzufügen und bearbeiten in der Rolle Admin-->
-                        <li><a href="#">Artikel hinzufügen</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#">Artikel bearbeiten</a></li>
-                    </ul>
-                </li>
-            </ul>
-
-            <!-- Searchbar-->
-            <form class="navbar-form navbar-left" role="search">
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Suche">
-                </div>
-                <button type="submit" class="btn btn-default">Suchen</button>
-            </form>
-
+                <!-- Searchbar-->
+                <form class="navbar-form navbar-left" role="search">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Suche">
+                    </div>
+                    <button type="submit" class="btn btn-default" ng-click="kundenCtrl.showKunden">Suchen</button>
+                </form>
 
             <!-- Warenkorb-->
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Warenkorb <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
-                    <!-- Artikel bei Klick/MouseOver minimiert in Liste anzeigen-->
+                        <!-- Artikel bei Klick/MouseOver minimiert in Liste anzeigen-->
                         <!--Eventuell Gesamtbetrag ganzt unten anzeigen-->
-                    </ul>
-                </li>
-            </ul>
-
-            <!-- Kunden DropDown-->
-            <ul class="nav navbar-nav navbar-right">
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Kunden <span class="caret"></span></a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="#/meinKonto">Suche</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#">Bearbeiten</a></li>
                     </ul>
                 </li>
             </ul>
@@ -75,7 +55,31 @@
                     </ul>
                 </li>
             </ul>
+
+            <!-- Kunden DropDown-->
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Kunden <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu" ng-controller="kundenVerwCtrl as kunde">
+                        <li><a href="/#/kundenBearbeiten">Bearbeiten</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+            <!-- Artikel DropDown-->
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Artikel <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <!-- Artikel hinzufügen und bearbeiten in der Rolle Admin-->
+                        <li><a href="#">Hinzuf&uuml;gen</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">Bearbeiten</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
-

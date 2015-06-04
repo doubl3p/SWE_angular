@@ -3,7 +3,7 @@
     'use strict';
 
     angular.module('webapp',
-        ['reg', 'bestellVerw', 'kundenVerw', 'artikelVerw', 'ui.router', 'ngResource'])
+        ['reg', 'bestellVerw', 'kundenVerw', 'artikelVerw', 'ui.router', 'ngResource', 'restAPI'])
 
          //angular Services werden zweimal angegeben. Da Parameter bei Minifien z.B. zu a und b werden
          //Parameter kann man benennen wie man mag
@@ -16,37 +16,43 @@
                 .state('artikel', {
                     url: '/artikel',
                     templateUrl: 'artikelverwaltung/artikelverwaltung.html',
-                    controller: 'artikelVerwCtrl'
+                    controller: 'artikelVerwCtrl as artikelCtrl'
                 })
 
-                .state('meinKonto', {
-                    url: '/meinKonto',
+                .state('kunden', {
+                    url: '/kunden',
                     templateUrl: 'kundenverwaltung/kundenverwaltung.html',
-                    controller: 'kundenVerwCtrl'
+                    controller: 'kundenVerwCtrl as kundenCtrl'
+                })
+
+                .state('kundenBearbeiten', {
+                    url: '/kundenBearbeiten',
+                    templateUrl: 'kundenverwaltung/kundenbearbeiten.html',
+                    controller: 'kundenVerwCtrl as kundenCtrl'
                 })
 
                 .state('login', {
                     url: '/meinKonto/login',
                     templateUrl: 'kundenverwaltung/login.html',
-                    controller: 'kundenVerwCtrl'
+                    controller: 'kundenVerwCtrl as kundenCtrl'
                 })
 
                 .state('bestellung', {
                     url: '/meinKonto/bestellung',
                     templateUrl: 'bestellverwaltung/bestellverwaltung.html',
-                    controller: 'bestellVerwCtrl'
+                    controller: 'bestellVerwCtrl as bestellCtrl'
                 })
 
                 .state('warenkonto', {
                     url: '/warenkonto',
                     templateUrl: 'kundenverwaltung/kundenverwaltung.html',
-                    controller: 'bestellVerwCtrl'
+                    controller: 'bestellVerwCtrl as bestellCtrl'
                 })
 
                 .state('about', {
                     url: '/about',
                     templateUrl: 'templates/about.html',
-                    controller: 'aboutCtrl'
+                    controller: 'aboutCtrl as about'
                 });
 
         }]);

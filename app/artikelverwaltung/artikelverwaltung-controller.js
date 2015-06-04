@@ -1,7 +1,9 @@
 (function () {
 
-    function artikelVerwCtrl(){
+    function artikelVerwCtrl(ArtikelService){
         var vs = this;
+
+        this.users = ArtikelService.query();
     }
 
 

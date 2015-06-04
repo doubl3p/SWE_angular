@@ -56,37 +56,82 @@
 //        return $resource(basic, {}, {get: {method: 'GET', headers: {Authorization: basicAuth}}});
 //    });
 
+
     ////////////////////////////////////////////////////////////////
-    function RestService(MoebelREST) {
-        return {
+    // Super Cleaning Coding Version
+//    function RestService(MoebelREST) {
+//        return {
+//
+//            getKunden: function () {
+//
+//            return MoebelREST().setPath('/katalog');
+//            }
+//        }
+//    }
+//
+//    function MoebelREST ($window, $resource) {
+//
+//        var vs = this;
+//        var btoa = $window.btoa;
+//        var loginname = "admin";
+//        var password = "p";
+//        var basic = "/shop/rest";
+//        var basicAuth = 'Basic ' + btoa(loginname + ':' + password);
+//        var reqURL = basic + host;
+//
+//
+//        return $resource(reqURL, {get: {method: 'GET', headers: {Authorization: basicAuth}});
+//    }
+//
+//        angular.module('restAPI')
+//            .service('RestService', RestService)
+//            .factory('MoebelREST', MoebelREST);
+    //////////////////////////////////////////////////////////////////////////////
 
-            getKunden: function () {
+    //////////////////////////////////////////////////////////////////////////////////
+    // tausend Factories Version
 
-            return MoebelREST("/kunden");
-            }
-        }
-    }
-
-    function MoebelREST ($window, $resource, host) {
-
+    function ArtikelService($window, $resource) {
         var vs = this;
         var btoa = $window.btoa;
         var loginname = "admin";
         var password = "p";
-        var basic = "/shop/rest";
+        var basic = "/shop/rest/katalog";
         var basicAuth = 'Basic ' + btoa(loginname + ':' + password);
-        var reqURL = basic + host;
-
-        return return $resource(reqURL, {}, {get: {method: 'GET', headers: {Authorization: basicAuth}}});
-    }
 
 
-        angular.module('webapp')
-            .service('RestService', RestService)
-            .factory('MoebelREST', MoebelREST);
+        return $resource(basic, {}, {get: {method: 'GET', headers: {Authorization: basicAuth}}});
+
+    };
+    function KundenService($window, $resource) {
+        var vs = this;
+        var btoa = $window.btoa;
+        var loginname = "admin";
+        var password = "p";
+        var basic = "/shop/rest/kunden";
+        var basicAuth = 'Basic ' + btoa(loginname + ':' + password);
 
 
-})();
+        return $resource(basic, {}, {get: {method: 'GET', headers: {Authorization: basicAuth}}});
+
+    };
+    function KundeIdService($window, $resource) {
+        var vs = this;
+        var btoa = $window.btoa;
+        var loginname = "admin";
+        var password = "p";
+        var basic = "/shop/rest/kunden/:id";
+        var basicAuth = 'Basic ' + btoa(loginname + ':' + password);
+
+
+        var data = $resource(basic, {id: '@id'}, {update: {method: 'PUT'}}, {get: {method: 'GET', headers: {Authorization: basicAuth}}});
+        return data;
+    };
+    angular.module('restAPI', [])
+        .factory('ArtikelService', ArtikelService)
+        .factory('KundenService', KundenService)
+        .factory('KundeIdService', KundeIdService);
+}());
 
 // $http header anpassen
 //angular.module('restAPI', [])
