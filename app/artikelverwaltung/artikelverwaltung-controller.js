@@ -1,9 +1,19 @@
 (function () {
 
-    function artikelVerwCtrl(ArtikelService){
-        var vs = this;
+    function artikelVerwCtrl(RestService){
+        //this.service = ArtikelService;
 
-        this.users = ArtikelService.query();
+        //this.getAllArtikel = function() {
+        //    this.service.getResource()...
+        //}
+
+        //this.findArtikelById(id) {
+        //    this.service..
+        //    return...
+        //}
+
+
+        this.users = RestService.getProductKatalog().query();
     }
 
 

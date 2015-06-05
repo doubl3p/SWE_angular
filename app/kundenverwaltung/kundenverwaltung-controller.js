@@ -1,15 +1,11 @@
-/**
- * Created by PePa on 17.05.2015.
- */
-
 (function () {
 
-    function kundenVerwCtrl(KundenService, KundeIdService){
+    function kundenVerwCtrl(RestService){
         var s = this;
 
 
         // das hier geht wunderbar und ruft z.B. alle Kunden ab, die es gibt.
-        s.users = KundenService.query();
+        s.users = RestService.getKunden().query();
 
 
 
