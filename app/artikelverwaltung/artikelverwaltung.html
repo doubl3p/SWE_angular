@@ -4,14 +4,36 @@
     <br>
 
 
-    <div class="col-sm-12" ng-controller="artikelVerwCtrl as artikel">
+
+    <div class="col-sm-12">
         <div>
             <div class="col-sm-4">
                 <div class="thumbnail">
                     <img src="images/chesterfield_black.jpg">
                     <div class="caption">
-                        <h3>{{artikel.users[0].bezeichnung}}</h3>
-                        <p>{{artikel.users[0].preis}} Euro</p>
+                       <h3>{{artikelCtrl.artikel[0].bezeichnung}}</h3>
+                        <!--<h3>{{artikelCtrl.oneArtikel.bezeichnung}}</h3>-->
+                        <p>{{artikelCtrl.artikel[0].preis}} Euro</p>
+                        <p>
+                            <a href="#" class="btn btn-primary" role="button" ng-click="artikelCtrl.findArtikelById('501')">Details</a>
+                            <!--<a href="#" class="btn btn-primary" role="button">Details</a>-->
+                            <a href="#" class="btn btn-default" role="button">zum Warenkorb</a>
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div>
+            <div class="col-sm-4">
+                <div class="thumbnail">
+                    <img src="images/chesterfield_black.jpg">
+                    <div class="caption">
+                        <h3>{{artikelCtrl.artikel[1].bezeichnung}}</h3>
+                        <p>{{artikelCtrl.artikel[1].preis}} Euro</p>
                         <p>
                             <a href="#" class="btn btn-primary" role="button">Details</a>
                             <a href="#" class="btn btn-default" role="button">zum Warenkorb</a>
@@ -26,24 +48,8 @@
                 <div class="thumbnail">
                     <img src="images/chesterfield_black.jpg">
                     <div class="caption">
-                        <h3>{{artikel.users[1].bezeichnung}}</h3>
-                        <p>{{artikel.users[1].preis}} Euro</p>
-                        <p>
-                            <a href="#" class="btn btn-primary" role="button">Details</a>
-                            <a href="#" class="btn btn-default" role="button">zum Warenkorb</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div>
-            <div class="col-sm-4">
-                <div class="thumbnail">
-                    <img src="images/chesterfield_black.jpg">
-                    <div class="caption">
-                        <h3>{{artikel.users[2].bezeichnung}}</h3>
-                        <p>{{artikel.users[2].preis}} Euro</p>
+                        <h3>{{artikelCtrl.artikel[2].bezeichnung}}</h3>
+                        <p>{{artikelCtrl.artikel[2].preis}} Euro</p>
                         <p>
                             <a href="#" class="btn btn-primary" role="button">Details</a>
                             <a href="#" class="btn btn-default" role="button">zum Warenkorb</a>
@@ -56,19 +62,26 @@
 
 
 
-<div class="col-sm-12" ng-controller="artikelVerwCtrl as artikel">
-    <div  ng-repeat="a in artikel.users">
-        <div class="col-sm-3">
-            <div class="thumbnail">
-                <div class="caption">
-                    <h3>{{a.bezeichnung}}</h3>
-                    <p>{{a.preis}} Euro</p>
-                    <p>
-                        <a href="#" class="btn btn-primary" role="button">Details</a>
-                        <a href="#" class="btn btn-default" role="button">zum Warenkorb</a>
-                    </p>
+    <div class="col-sm-12">
+        <div  ng-repeat="a in artikelCtrl.artikel">
+            <div class="col-sm-3">
+                <div class="thumbnail">
+                    <div class="caption">
+                        <h3>{{a.bezeichnung}}</h3>
+                        <p>{{a.preis}} Euro</p>
+                        <p>
+                            <a href="#" class="btn btn-primary" role="button">Details</a>
+                            <a href="#" class="btn btn-default" role="button">zum Warenkorb</a>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
+</div>
+
+<div ng-show="artikelCtrl.oneArtikel">
+    <p>{{artikelCtrl.oneArtikel}}</p>
+
 </div>

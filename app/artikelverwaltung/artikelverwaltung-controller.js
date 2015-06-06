@@ -1,19 +1,18 @@
 (function () {
 
     function artikelVerwCtrl(RestService){
-        //this.service = ArtikelService;
 
-        //this.getAllArtikel = function() {
-        //    this.service.getResource()...
-        //}
+        this.oneArtikel = undefined;
 
-        //this.findArtikelById(id) {
-        //    this.service..
-        //    return...
-        //}
+        // liefert einen Artikel anhand der id
+        this.findArtikelById = function(id) {
+            oneArtikel = RestService.getProductKatalog().get({id: id});
+        }
 
+        //this.oneArtikel = RestService.getProductKatalog().get({id: '501'});
 
-        this.users = RestService.getProductKatalog().query();
+        // liefert alle Artikel im Katalog
+        this.artikel = RestService.getProductKatalog().query();
     }
 
 
