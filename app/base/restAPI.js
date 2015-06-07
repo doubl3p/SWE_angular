@@ -1,18 +1,4 @@
 (function () {
-//    function restAPICtrl(){
-//
-//    function getKundeById($resource){
-//
-//        var kunde = $resource("localhost:8443/shop/rest/kunden/:id", {id: "@id"}, {});
-//        var selected = null;
-//
-//
-//        kunde.get({id: '300'}, function(data){
-//            this.selected = data;
-//        })
-//    }
-//}
-
     function RestService($window, $resource) {
         var sv = this;
         sv.btoa = $window.btoa;
@@ -39,7 +25,7 @@
             return data;
         }
     };
-
+    
     angular.module('restService', [])
         .service('RestService', RestService);
 }());
