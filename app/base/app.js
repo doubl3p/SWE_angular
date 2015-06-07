@@ -25,12 +25,6 @@
                     controller: 'kundenVerwCtrl as kundenCtrl'
                 })
 
-                .state('kundenBearbeiten', {
-                    url: '/kundenBearbeiten',
-                    templateUrl: 'kundenverwaltung/kundenbearbeiten.html',
-                    controller: 'kundenVerwCtrl as kundenCtrl'
-                })
-
                 .state('login', {
                     url: '/meinKonto/login',
                     templateUrl: 'kundenverwaltung/login.html',

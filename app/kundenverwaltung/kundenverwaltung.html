@@ -5,6 +5,24 @@
 <!--   this.blar = "asdfasdf"; deklarieren-->
 <div>
     <div class="panel panel-default">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-sm-offset-3">
+                    <div id="imaginary_container">
+                        <div class="input-group stylish-input-group">
+                            <input ng-model="filter.id" type="text" class="form-control"  placeholder="Geben Sie bitte eine KundenID ein." >
+                    <span class="input-group-addon">
+                        <button type="submit" ng-click="kundenCtrl.getKunden()">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                    </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- Default panel contents -->
         <div class="panel-heading">Kunden</div>
         <!-- Table -->
@@ -19,16 +37,28 @@
             </thead>
 
                 <tbody>
-                    <tr  ng-repeat="k in kundenCtrl.users">
+                    <tr  ng-repeat="k in kundenCtrl.users | filter: filter.id">
                         <td>{{k.id}}</td>
                         <td>{{k.identity.vorname}}</td>
                         <td>{{k.identity.nachname}}</td>
                         <td>{{k.identity.email}}</td>
+                        <td>
+                            <button type="button" class="btn btn-warning" data-toggle="modal" data-target="Kunde-bearbeiten-Modal" ng-click="kundenCtrl.getKunden(k.id)">
+                                bearbeiten
+                            </button>
+                        </td>
                     </tr>
                 </tbody>
 
         </table>
     </div>
-
-
 </div>
+
+<!-- Kunde-bearbeiten-Modal -->
+<!--<div class='modal' id="Kunde-bearbeiten-Modal"ng-show='show'>-->
+    <!--<div class='modal-overlay' ng-click='hideModal()'></div>-->
+    <!--<div class='modal-dialog' ng-style='dialogStyle'>-->
+        <!--<div class='modal-close' ng-click='hideModal()'>X</div>-->
+        <!--<div class='modal-dialog-content' ng-transclude></div>-->
+    <!--</div>-->
+<!--</div>-->

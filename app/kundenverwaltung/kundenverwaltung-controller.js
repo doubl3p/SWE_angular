@@ -3,7 +3,7 @@
     function kundenVerwCtrl(RestService){
         var s = this;
 
-
+        this.filter = {id: ''};
         // das hier geht wunderbar und ruft z.B. alle Kunden ab, die es gibt.
         s.users = RestService.getKunden().query();
 

@@ -7,6 +7,7 @@
         // liefert einen Artikel anhand der id
         this.findArtikelById = function(id) {
             this.oneArtikel = RestService.getProductKatalog().get({id: id});
+
         }
 
         //this.oneArtikel = RestService.getProductKatalog().get({id: '501'});
