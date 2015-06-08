@@ -7,6 +7,10 @@
         // das hier geht wunderbar und ruft z.B. alle Kunden ab, die es gibt.
         s.users = RestService.getKunden().query();
 
+        this.addKunde = function() {
+            RestService.updateKunde.update();
+        };
+
 
 
         //funktioniert noch nicht

@@ -16,7 +16,11 @@
         }
 
         this.updateKunde = function() {
-            var data = $resource(sv.basic + '/kunden/:id', {id: '@id'}, {update: {method: 'PUT'}}, {get: {method: 'GET', headers: {Authorization: sv.basicAuth}}});
+            var data = $resource(sv.basic + '/kunden/:id', {id: '@id'}, {update: {method: 'PUT'}}, {get: {method: 'GET', headers: {Authorization: sv.basicAuth},
+                update: {
+                    methode: "PUT"
+                }
+            }});
             return data;
         }
 
