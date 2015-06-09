@@ -28,6 +28,12 @@
             var data = $resource(sv.basic + '/artikel/:id', {id: '@id'}, {update: {method: 'PUT'}}, {get: {method: 'GET', headers: {Authorization: sv.basicAuth}}});
             return data;
         }
+
+        this.createArtikel = function() {
+            var data = $resource(sv.basic + '/artikel/:id', {id: '@id'}, {update: {method: 'PUT'}}, {get: {method: 'GET', headers: {Authorization: sv.basicAuth}}});
+            return data;
+        }
+
     };
     
     angular.module('restService', [])
