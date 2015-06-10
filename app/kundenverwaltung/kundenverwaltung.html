@@ -13,22 +13,22 @@
             <div class="modal-body">
                 <p>
                     <div class="form-group">
-                        <label class="control-label col-sm-2" for="vorname">Vorname:</label>
-                        <input type="text" class="form-control" id="vorname" ng-model="vornamePut" placeholder="{{kundenCtrl.oneUser.identity.vorname}}"/>
+                        <label class="control-label col-sm-2">Vorname:</label>
+                        <input type="text" class="form-control" ng-model="kundenCtrl.oneUser.identity.vorname"/>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-sm-2" for="nachname">Nachname:</label>
-                        <input type="text" class="form-control" id="nachname" ng-model="nachnamePut" placeholder="{{kundenCtrl.oneUser.identity.nachname}}">
+                        <label class="control-label col-sm-2">Nachname:</label>
+                        <input type="text" class="form-control" ng-model="kundenCtrl.oneUser.identity.nachname">
                      </div>
                     <div class="form-group">
-                        <label class="control-label col-sm-2" for="email">EMail::</label>
-                        <input type="text" class="form-control" id="email" ng-model="emailPut" placeholder="{{kundenCtrl.oneUser.identity.email}}">
+                        <label class="control-label col-sm-2">EMail:</label>
+                        <input type="text" class="form-control" ng-model="kundenCtrl.oneUser.identity.email">
                     </div>
                 </p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Schlie&szlig;en</button>
-                <button type="button" class="btn btn-primary" ng-click="kundenCtrl.updateIdentityKunde(kundenCtrl.oneUser.id, vornamePut, nachnamePut, emailPut)">Speichern</button>
+                <button type="button" class="btn btn-primary" ng-click="kundenCtrl.updateIdentityKunde(kundenCtrl.oneUser.id, kundenCtrl.oneUser.identity.vorname, kundenCtrl.oneUser.identity.nachname, kundenCtrl.oneUser.identity.email)">Speichern</button>
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
@@ -77,40 +77,40 @@
             <div class="modal-body">
                 <p>
                 <div class="form-group">
-                    <label class="control-label col-sm-2" for="loginname">Loginname:</label>
-                    <input type="text" class="form-control" id="loginname" ng-model="loginnamePost" placeholder="Loginname eingeben"/>
+                    <label class="control-label col-sm-2">Loginname:</label>
+                    <input type="text" class="form-control" ng-model="loginnamePost" placeholder="Loginname eingeben"/>
                 </div>
                 <div class="form-group">
-                    <label class="control-label col-sm-2" for="nachname">Nachname:</label>
-                    <input type="text" class="form-control" id="nachname" ng-model="nachnamePost"placeholder="Nachname eingeben">
+                    <label class="control-label col-sm-2">Nachname:</label>
+                    <input type="text" class="form-control" ng-model="nachnamePost"placeholder="Nachname eingeben">
                 </div>
                 <div class="form-group">
-                    <label class="control-label col-sm-2" for="vorname">Vorname:</label>
-                    <input type="text" class="form-control" id="vorname" ng-model="vornamePost" placeholder="Vorname eingeben"/>
+                    <label class="control-label col-sm-2" >Vorname:</label>
+                    <input type="text" class="form-control" ng-model="vornamePost" placeholder="Vorname eingeben"/>
                 </div>
                 <div class="form-group">
-                    <label class="control-label col-sm-2" for="email">EMail:</label>
-                    <input type="text" class="form-control" id="email" ng-model="emailPost"placeholder="EMail eingeben">
+                    <label class="control-label col-sm-2">EMail:</label>
+                    <input type="text" class="form-control" ng-model="emailPost"placeholder="EMail eingeben">
                 </div>
                 <div class="form-group">
-                    <label class="control-label col-sm-2" for="plz">PLZ:</label>
-                    <input type="text" class="form-control" id="plz" ng-model="plzPost" placeholder="Postleitzahl eingeben">
+                    <label class="control-label col-sm-2">PLZ:</label>
+                    <input type="text" class="form-control" ng-model="plzPost" placeholder="Postleitzahl eingeben">
                 </div>
                 <div class="form-group">
-                    <label class="control-label col-sm-2" for="ort">Ort:</label>
-                    <input type="text" class="form-control" id="ort" ng-model="ortPost" placeholder="Ort eingeben">
+                    <label class="control-label col-sm-2">Ort:</label>
+                    <input type="text" class="form-control" ng-model="ortPost" placeholder="Ort eingeben">
                 </div>
                 <div class="form-group">
-                    <label class="control-label col-sm-2" for="strasse">Stra&szlig;e:</label>
-                    <input type="text" class="form-control" id="strasse" ng-model="strassePost" placeholder="Stra&szlig;e eingeben">
+                    <label class="control-label col-sm-2">Stra&szlig;e:</label>
+                    <input type="text" class="form-control" ng-model="strassePost" placeholder="Stra&szlig;e eingeben">
                 </div>
                 <div class="form-group">
-                    <label class="control-label col-sm-2" for="hausnr">Hausnummer:</label>
-                    <input type="text" class="form-control" id="hausnr" ng-model="hausnrPost" placeholder="Hausnummer eingeben">
+                    <label class="control-label col-sm-2">Hausnummer:</label>
+                    <input type="text" class="form-control" ng-model="hausnrPost" placeholder="Hausnummer eingeben">
                 </div>
                 <div class="form-group">
-                    <label class="control-label col-sm-2" for="seit">Seit:</label>
-                    <input type="text" class="form-control" id="seit" ng-model="seitPost" placeholder="Mitglied seit ">
+                    <label class="control-label col-sm-2">Seit:</label>
+                    <input type="text" class="form-control" ng-model="seitPost" placeholder="Mitglied seit ">
                 </div>
                 </p>
             </div>
