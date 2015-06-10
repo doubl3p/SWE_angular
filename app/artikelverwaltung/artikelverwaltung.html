@@ -1,5 +1,35 @@
-<div class="col-sm-12" >
+<div class="modal fade" id="ArtikelBearbeitenModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Artikel bearbeiten</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="vorname">Bezeichnung:</label>
+                    <input type="text" class="form-control" id="vorname" ng-model="k" placeholder="{{artikelCtrl.currentArtikel.bezeichnung}}"/>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="nachname">Preis:</label>
+                    <input type="text" class="form-control" id="nachname" placeholder="{{artikelCtrl.currentArtikel.preis}}">
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="email">Rating:</label>
+                    <input type="text" class="form-control" id="email" placeholder="{{artikelCtrl.currentArtikel.rating}}">
+                </div>
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Schlie&szlig;en</button>
+                <button type="button" class="btn btn-primary" ng-click="addKunde()">Speichern</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 
+<div class="col-sm-12" >
     <!--Artikel hunzufügen-->
     <div >
         <div class="col-sm-3">
@@ -26,12 +56,13 @@
     </div>
 
     <!--Alle Artikel-->
-    <div  ng-repeat="a in artikelCtrl.artikel">
+    <div  ng-repeat="a in artikelCtrl.katalog">
         <div class="col-sm-3">
             <div class="thumbnail">
                 <div class="caption">
                     <div align="right">
-                        <a href="#" class="glyphicon glyphicon-wrench" role="button"></a>
+                        <a href="#" class="glyphicon glyphicon-wrench" role="button" data-toggle="modal" data-target="#ArtikelBearbeitenModal" ng-click="artikelCtrl.loadCurrentArtikel(a.id)"></a>
+                        <!--<a href="#" class="glyphicon glyphicon-wrench" role="button" data-toggle="modal" data-target="#ArtikelBearbeitenModal" ng-click="artikelCtrl.loadCurrentArtikel(a.id)"></a>-->
                     </div>
                     <h3>{{a.bezeichnung}}</h3>
                     <h4>{{a.preis}} Euro</h4>

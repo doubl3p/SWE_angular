@@ -1,8 +1,9 @@
 (function () {
 
     function artikelVerwCtrl(RestService){
-
         var vm = this;
+
+
         // TODO: nachsehen wie man diese Daten eventuell in die Funktion create Atikel verlagert
         vm.json = {
             bezeichnung: "",
@@ -10,17 +11,22 @@
             rating: "",
             ausgesondert: "false"};
 
-        // liefert einen Artikel anhand der id
-        this.findArtikelById = function(id) {
-            this.oneArtikel = RestService.getProductKatalog().get({id: id});
-        }
-
         // liefert alle Artikel im Katalog
-        this.artikel = RestService.getProductKatalog().query();
+        vm.katalog = RestService.getProductKatalog().query();
 
         //neuer Artikel anlegen
-        this.createArtikel = function (){
+        vm.createArtikel = function (){
             RestService.createArtikel().save(vm.json);
+        }
+
+        this.loadCurrentArtikel = function(artikelId){
+            vm.currentArtikel = _.findWhere(vm.katalog, {id: artikelId});
+        }
+
+
+        // liefert einen Artikel anhand der id
+        vm.findArtikelById = function(id) {
+            this.oneArtikel = RestService.getProductKatalog().get({id: id});
         }
     }
 

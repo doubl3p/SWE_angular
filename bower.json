@@ -25,6 +25,7 @@
     "restangular": "~1.4.0",
     "angular-ui-router": "~0.2.13",
     "bootstrap": "3.3.4",
-    "jquery": "~2.1.4"
+    "jquery": "~2.1.4",
+    "lodash": "~3.9.3"
   }
 }
