@@ -7,9 +7,16 @@
         .config(['$urlRouterProvider', '$stateProvider', function($urlRouterProvider, $stateProvider){
 
             //wenn man hinter '#/' etwas eingibt, dass es nicht gibt wird hier hin geroutet
-            $urlRouterProvider.otherwise('/artikel');
+            $urlRouterProvider.otherwise('/');
 
             $stateProvider
+
+                .state('start', {
+                    url: '/',
+                    templateUrl: 'templates/startpage.html',
+                    controller: 'artikelVerwCtrl as artikelCtrl'
+                })
+
                 .state('artikel', {
                     url: '/artikel',
                     templateUrl: 'artikelverwaltung/artikelverwaltung.html',

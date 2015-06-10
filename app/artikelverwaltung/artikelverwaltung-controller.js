@@ -18,9 +18,9 @@
         //}
 
 
-        this.createArtikel = function (){
+        this.createArtikel = function (abc){
             RestService.createArtikel().save({
-                                                bezeichnung: "Haengematte Goeransen",
+                                                bezeichnung: abc,
                                                 preis: "650",
                                                 rating: "5",
                                                 ausgesondert: "false"}
