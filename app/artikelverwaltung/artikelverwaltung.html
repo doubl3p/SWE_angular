@@ -1,32 +1,31 @@
-
-
-<!--Alle Artikel-->
 <div class="col-sm-12" >
 
+    <!--Artikel hunzufügen-->
     <div >
         <div class="col-sm-3">
             <div class="thumbnail">
                 <div class="caption">
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Artikelbezeichnung" aria-describedby="Artikelbezeichnung" ng-model="abc">
+                        <input type="text" class="form-control" placeholder="Artikelbezeichnung" aria-describedby="Artikelbezeichnung" ng-model="artikelCtrl.json.bezeichnung">
                     </div>
 
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Preis" aria-describedby="Preis">
+                        <input type="text" class="form-control" placeholder="Preis" aria-describedby="Preis" ng-model="artikelCtrl.json.preis">
                     </div>
 
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Rating" aria-describedby="Rating">
+                        <input type="text" class="form-control" placeholder="Rating" aria-describedby="Rating" ng-model="artikelCtrl.json.rating">
                     </div>
                     <br>
                     <p>
-                        <a href="#/artikel" class="btn btn-default" role="button" ng-click="artikelCtrl.createArtikel(abc)">Artikel anlegen</a>
+                        <a href="#/artikel" class="btn btn-default" role="button" ng-click="artikelCtrl.createArtikel()">Artikel anlegen</a>
                     </p>
                 </div>
             </div>
         </div>
     </div>
 
+    <!--Alle Artikel-->
     <div  ng-repeat="a in artikelCtrl.artikel">
         <div class="col-sm-3">
             <div class="thumbnail">
