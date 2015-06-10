@@ -25,12 +25,12 @@
         }
 
         this.updateArtikel = function() {
-            var data = $resource(sv.basic + '/artikel/:id', {id: '@id'}, {update: {method: 'PUT'}}, {get: {method: 'GET', headers: {Authorization: sv.basicAuth}}});
+            var data = $resource(sv.basic + '/katalog/:id', {id: '@id'}, {update: {method: 'PUT', headers: {Authorization: sv.basicAuth}}});
             return data;
         }
 
         this.createArtikel = function() {
-            var data = $resource(sv.basic + '/artikel/:id', {id: '@id'}, {update: {method: 'PUT'}}, {get: {method: 'GET', headers: {Authorization: sv.basicAuth}}});
+            var data = $resource(sv.basic + '/artikel/:id', {id: '@id'}, {get: {method: 'GET', headers: {Authorization: sv.basicAuth}}});
             return data;
         }
 
