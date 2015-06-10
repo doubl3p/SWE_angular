@@ -16,11 +16,17 @@
         }
 
         this.updateKunde = function() {
-            var data = $resource(sv.basic + '/kunden/:id', {id: '@id'}, {update: {method: 'PUT'}}, {get: {method: 'GET', headers: {Authorization: sv.basicAuth},
-                update: {
-                    methode: "PUT"
-                }
-            }});
+            var data = $resource(sv.basic + '/kunden/:id', {id: '@id'}, {update: {method: 'PUT'}}, {get: {method: 'GET', headers: {Authorization: sv.basicAuth}}});
+            return data;
+        }
+
+        this.createKunde = function() {
+            var data = $resource(sv.basic + '/registrierung', {update: {method: 'POST'}}, {get: {method: 'GET', headers: {Authorization: sv.basicAuth}}});
+            return data;
+        }
+
+        this.deleteKunde = function() {
+            var data = $resource(sv.basic + '/kunden/:id', {id: '@id'}, {update: {method: 'DELETE'}}, {get: {method: 'GET', headers: {Authorization: sv.basicAuth}}});
             return data;
         }
 
