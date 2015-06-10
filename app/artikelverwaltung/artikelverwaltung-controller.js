@@ -1,30 +1,39 @@
 (function () {
 
     function artikelVerwCtrl(RestService){
+        var vm = this;
 
-        // liefert einen Artikel anhand der id
-        this.findArtikelById = function(id) {
-            this.oneArtikel = RestService.getProductKatalog().get({id: id});
-        }
+        // TODO: nachsehen wie man diese Daten eventuell in die Funktion create Atikel verlagert
+        vm.json = {
+            bezeichnung: "",
+            preis: "",
+            rating: "",
+            ausgesondert: "false"};
 
         // liefert alle Artikel im Katalog
-        this.artikel = RestService.getProductKatalog().query();
+        vm.katalog = RestService.getProductKatalog().query();
 
-        //neuer Artikel anlegen
-        //this.createArtikel = function (artikelbezeichnung, preis, rating){
-        //    RestService.createArtikel().save({artikelbezeichnung: artikelbezeichnung,
-        //                                      preis: preis,
-        //                                      rating: rating});
-        //}
+        // neuer Artikel anlegen
+        vm.createArtikel = function (){
+            RestService.createArtikel().save(vm.json);
+        }
+
+        // Artikel updaten
+        vm.updateArtikel = function (){
+            RestService.updateArtikel().update({id: vm.currentArtikel.id}, {bezeichnung: vm.currentArtikel.bezeichnung, preis: vm.currentArtikel.preis, rating: vm.currentArtikel.rating, ausgesondert: vm.currentArtikel.ausgesondert});
+        }
+
+        // lädt artikel anhand von parameter id
+        this.loadCurrentArtikel = function(artikelId){
+            vm.currentArtikel = _.findWhere(vm.katalog, {id: artikelId});
+        }
 
 
-        this.createArtikel = function (abc){
-            RestService.createArtikel().save({
-                                                bezeichnung: abc,
-                                                preis: "650",
-                                                rating: "5",
-                                                ausgesondert: "false"}
-                );
+
+
+        // liefert einen Artikel anhand der id
+        vm.findArtikelById = function(id) {
+            this.oneArtikel = RestService.getProductKatalog().get({id: id});
         }
     }
 
