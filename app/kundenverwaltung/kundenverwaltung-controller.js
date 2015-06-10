@@ -7,15 +7,15 @@
 
         this.findKundeById = function(id) {
             this.oneUser = RestService.getKunden().get({id: id});
-        }
+        };
 
         this.updateIdentityKunde = function(id, vorname, nachname, email) {
             RestService.updateKunde().update({id: id},{identity: {vorname: vorname, nachname: nachname, email: email}});
-        }
+        };
 
         this.deleteKunde = function(id) {
             RestService.deleteKunde.remove({id: id});
-        }
+        };
 
         //this.addKunde = function() {
         //    RestService.createKunde().save({identity: {loginname: "jules", enabled: "true", nachname: "schnurr", vorname: "julian", email: "Schnurr-Julian-web@web.de"},
@@ -44,7 +44,7 @@
                     agbAkzeptiert: true,
                     bestellungUri: ""}
             );
-        }
+        };
 
         // das hier geht wunderbar und ruft z.B. alle Kunden ab, die es gibt.
         s.users = RestService.getKunden().query();

@@ -43,21 +43,12 @@
             </div>
             <div class="modal-body">
                 <p>
-                    Vorname:{{kundenCtrl.oneUser.identity.vorname}}
-                    </br>
-                    Nachname: {{kundenCtrl.oneUser.identity.nachname}}
-                    </br>
-                    EMail: {{kundenCtrl.oneUser.identity.email}}
-                    </br>
-                    Adresse:
-                    </br>
-                        PLZ: {{kundenCtrl.oneUser.identity.adresse.plz}}
-                    </br>
-                        Ort: {{kundenCtrl.oneUser.identity.adresse.ort}}
-                    </br>
-                        Stra&szlig;e: {{kundenCtrl.oneUser.identity.adresse.strasse}}
-                    </br>
-                        Hausnummer: {{kundenCtrl.oneUser.identity.adresse.hausnr}}
+                    <address>
+                        <strong>{{kundenCtrl.oneUser.identity.nachname}} {{kundenCtrl.oneUser.identity.vorname}}</strong><br>
+                        {{kundenCtrl.oneUser.identity.adresse.strasse}} {{kundenCtrl.oneUser.identity.adresse.hausnr}}<br>
+                        {{kundenCtrl.oneUser.identity.adresse.plz}} {{kundenCtrl.oneUser.identity.adresse.ort}}<br>
+                         <a href="mailto:#">{{kundenCtrl.oneUser.identity.email}}</a>
+                    </address>
                 </p>
             </div>
             <div class="modal-footer">
@@ -141,6 +132,26 @@
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 
+<div class="modal fade" id="KundeReallyDeleteModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Kunde l&ouml;schen</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    Sind Sie sicher, dass Sie den Kunden {{kundenCtrl.oneUser.id}} l&ouml;schen m&ouml;chten?
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-toggle="modal"  data-dismiss="modal" data-target="#KundeDeleteModal" ng-click="kundenCtrl.deleteKunde(k.id)">Ja</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Nein</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
 <div>
     <div class="panel panel-default">
         <div class="container">
@@ -182,7 +193,7 @@
                         <td>
                             <button type="button" class="btn btn-info" data-toggle="modal" data-target="#KundeInfoModal" ng-click="kundenCtrl.findKundeById(k.id)">Info</button>
                             <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#KundePutModal" ng-click="kundenCtrl.findKundeById(k.id)">bearbeiten</button>
-                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#KundeDeleteModal" ng-click="kundenCtrl.deleteKunde(k.id)">l&ouml;schen</button>
+                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#KundeReallyDeleteModal" ng-click="kundenCtrl.findKundeById(k.id)">l&ouml;schen</button>
                         </td>
                     </tr>
                 </tbody>
