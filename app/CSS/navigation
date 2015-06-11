@@ -1,4 +1,5 @@
-.navbar-brand {
-    padding-top: 400px;
-    margin: auto;
+
+.navbar-pic {
+    padding-top: 200px;
 }
+
