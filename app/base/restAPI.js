@@ -25,7 +25,7 @@
         }
 
         this.updateArtikel = function() {
-            var data = $resource(sv.basic + '/katalog/:id', {id: '@id'}, {update: {method: 'PUT', headers: {Authorization: sv.basicAuth}}});
+            var data = $resource(sv.basic + '/artikel', {}, {update: {method: 'PUT', headers: {Authorization: sv.basicAuth}}});
             return data;
         }
 
