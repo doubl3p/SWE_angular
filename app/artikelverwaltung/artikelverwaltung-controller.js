@@ -1,7 +1,7 @@
 (function () {
 
     function artikelVerwCtrl(RestService){
-        var vm = this;
+        var vm = this
 
         // TODO: nachsehen wie man diese Daten eventuell in die Funktion create Atikel verlagert
         vm.json = {
@@ -12,6 +12,7 @@
 
         // liefert alle Artikel im Katalog
         vm.katalog = RestService.getProductKatalog().query();
+
 
         // neuer Artikel anlegen
         vm.createArtikel = function (){

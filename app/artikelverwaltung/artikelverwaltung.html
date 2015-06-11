@@ -30,53 +30,73 @@
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 
-<div class="col-sm-12" >
-    <!--Artikel hunzufügen-->
-    <div >
-        <div class="col-sm-3">
-            <div class="thumbnail">
-                <div class="caption">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Artikelbezeichnung" aria-describedby="Artikelbezeichnung" ng-model="artikelCtrl.json.bezeichnung">
+<div>
+    <!--Suchleiste-->
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-3">
+                <div id="imaginary_container">
+                    <div class="input-group stylish-input-group">
+                        <input ng-model="filter.id" type="text" class="form-control"  placeholder="Suchen" >
+                        <span class="input-group-addon">
+                            <button type="submit"">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        </span>
                     </div>
-
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Preis" aria-describedby="Preis" ng-model="artikelCtrl.json.preis">
-                    </div>
-
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Rating" aria-describedby="Rating" ng-model="artikelCtrl.json.rating">
-                    </div>
-                    <br>
-                    <p>
-                        <a href="#/artikel" class="btn btn-default" role="button" ng-click="artikelCtrl.createArtikel()">Artikel anlegen</a>
-                    </p>
                 </div>
             </div>
         </div>
     </div>
 
-    <!--Alle Artikel-->
-    <div  ng-repeat="a in artikelCtrl.katalog">
-        <div class="col-sm-3">
-            <div class="thumbnail">
-                <div class="caption">
-                    <div align="right">
-                        <a href="#" class="glyphicon glyphicon-wrench" role="button" data-toggle="modal" data-target="#ArtikelBearbeitenModal" ng-click="artikelCtrl.loadCurrentArtikel(a.id)"></a>
-                        <!--<a href="#" class="glyphicon glyphicon-wrench" role="button" data-toggle="modal" data-target="#ArtikelBearbeitenModal" ng-click="artikelCtrl.loadCurrentArtikel(a.id)"></a>-->
+    <br>
+
+    <div class="col-sm-12" >
+        <!--Artikel hunzufügen-->
+        <div >
+            <div class="col-sm-3">
+                <div class="thumbnail">
+                    <div class="caption">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Artikelbezeichnung" aria-describedby="Artikelbezeichnung" ng-model="artikelCtrl.json.bezeichnung">
+                        </div>
+
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Preis" aria-describedby="Preis" ng-model="artikelCtrl.json.preis">
+                        </div>
+
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Rating" aria-describedby="Rating" ng-model="artikelCtrl.json.rating">
+                        </div>
+                        <br>
+                        <p>
+                            <a href="#/artikel" class="btn btn-default" role="button" ng-click="artikelCtrl.createArtikel()">Artikel anlegen</a>
+                        </p>
                     </div>
-                    <h3>{{a.bezeichnung}}</h3>
-                    <h4>{{a.preis}} Euro</h4>
-                    <h4><br ng-class="{ 'hidden':  showDetails }"></h4>
-                    <h4  ng-class="{ 'hidden': ! showDetails }">Bewertung: {{a.rating}}</h4>
-                    <p>
-                        <a href="#" class="btn btn-primary" role="button" ng-click="showDetails = ! showDetails">Details</a>
-                        <a href="#" class="btn btn-default" role="button">zum Warenkorb</a>
-                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!--Alle Artikel-->
+        <div  ng-repeat="a in artikelCtrl.katalog | filter: filter.id" >
+            <div class="col-sm-3">
+                <div class="thumbnail">
+                    <div class="caption">
+                        <div align="right">
+                            <a href="#" class="glyphicon glyphicon-wrench" role="button" data-toggle="modal" data-target="#ArtikelBearbeitenModal" ng-click="artikelCtrl.loadCurrentArtikel(a.id)"></a>
+                            <!--<a href="#" class="glyphicon glyphicon-wrench" role="button" data-toggle="modal" data-target="#ArtikelBearbeitenModal" ng-click="artikelCtrl.loadCurrentArtikel(a.id)"></a>-->
+                        </div>
+                        <h3>{{a.bezeichnung}}</h3>
+                        <h4>{{a.preis}} Euro</h4>
+                        <h4><br ng-class="{ 'hidden':  showDetails }"></h4>
+                        <h4  ng-class="{ 'hidden': ! showDetails }">Bewertung: {{a.rating}}</h4>
+                        <p>
+                            <a href="#" class="btn btn-primary" role="button" ng-click="showDetails = ! showDetails">Details</a>
+                            <a href="#" class="btn btn-default" role="button">zum Warenkorb</a>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
-
