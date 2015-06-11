@@ -3,7 +3,7 @@
 <!--   also wichtig ist bei dem Zugirff auf den Kontroller ng-controller = "kundenVerwCtrl as kunde" und vor-->
 <!--   allem das kundenVerwCtrl as kunde!!! dann geht es und das ersetzt scope komplett. im Kontroller Variablen mit-->
 <!--   this.blar = "asdfasdf"; deklarieren-->
-<div class="modal fade" id="KundeBearbeitenModal">
+<div class="modal fade" id="KundePutModal">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -13,31 +13,150 @@
             <div class="modal-body">
                 <p>
                     <div class="form-group">
-                        <label class="control-label col-sm-2" for="vorname">Vorname:</label>
-                        <input type="text" class="form-control" id="vorname" ng-model="k" placeholder="{{k.identity.vorname}}"/>
+                        <label class="control-label col-sm-2">Vorname:</label>
+                        <input type="text" class="form-control" ng-model="kundenCtrl.oneUser.identity.vorname"/>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-sm-2" for="nachname">Nachname:</label>
-                        <input type="text" class="form-control" id="nachname" placeholder="Nachname eintragen">
+                        <label class="control-label col-sm-2">Nachname:</label>
+                        <input type="text" class="form-control" ng-model="kundenCtrl.oneUser.identity.nachname">
                      </div>
                     <div class="form-group">
-                        <label class="control-label col-sm-2" for="email">EMail::</label>
-                        <input type="text" class="form-control" id="email" placeholder="EMail eintragen">
+                        <label class="control-label col-sm-2">EMail:</label>
+                        <input type="text" class="form-control" ng-model="kundenCtrl.oneUser.identity.email">
                     </div>
                 </p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Schlie&szlig;en</button>
-                <button type="button" class="btn btn-primary" ng-click="addKunde()">Speichern</button>
+                <button type="button" class="btn btn-primary" ng-click="kundenCtrl.updateIdentityKunde(kundenCtrl.oneUser.id, kundenCtrl.oneUser.identity.vorname, kundenCtrl.oneUser.identity.nachname, kundenCtrl.oneUser.identity.email)">Speichern</button>
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
+
+<div class="modal fade" id="KundeInfoModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Info</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    <address>
+                        <strong>{{kundenCtrl.oneUser.identity.nachname}} {{kundenCtrl.oneUser.identity.vorname}}</strong><br>
+                        {{kundenCtrl.oneUser.identity.adresse.strasse}} {{kundenCtrl.oneUser.identity.adresse.hausnr}}<br>
+                        {{kundenCtrl.oneUser.identity.adresse.plz}} {{kundenCtrl.oneUser.identity.adresse.ort}}<br>
+                         <a href="mailto:#">{{kundenCtrl.oneUser.identity.email}}</a>
+                    </address>
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Schlie&szlig;en</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div class="modal fade" id="KundePostModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Kunde hinzuf&uuml;gen</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                <div class="form-group">
+                    <label class="control-label col-sm-2">Loginname:</label>
+                    <input type="text" class="form-control" ng-model="loginnamePost" placeholder="Loginname eingeben"/>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2">Nachname:</label>
+                    <input type="text" class="form-control" ng-model="nachnamePost"placeholder="Nachname eingeben">
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2" >Vorname:</label>
+                    <input type="text" class="form-control" ng-model="vornamePost" placeholder="Vorname eingeben"/>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2">EMail:</label>
+                    <input type="text" class="form-control" ng-model="emailPost"placeholder="EMail eingeben">
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2">PLZ:</label>
+                    <input type="text" class="form-control" ng-model="plzPost" placeholder="Postleitzahl eingeben">
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2">Ort:</label>
+                    <input type="text" class="form-control" ng-model="ortPost" placeholder="Ort eingeben">
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2">Stra&szlig;e:</label>
+                    <input type="text" class="form-control" ng-model="strassePost" placeholder="Stra&szlig;e eingeben">
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2">Hausnummer:</label>
+                    <input type="text" class="form-control" ng-model="hausnrPost" placeholder="Hausnummer eingeben">
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2">Seit:</label>
+                    <input type="text" class="form-control" ng-model="seitPost" placeholder="Mitglied seit ">
+                </div>
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Schlie&szlig;en</button>
+                <button type="button" class="btn btn-primary" ng-click="kundenCtrl.createKunde()">Speichern</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div class="modal fade" id="KundeDeleteModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Info</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    Der Kunde {{kundenCtrl.oneUser.id}} wurde erfolgreich gel&ouml;scht.
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Schlie&szlig;en</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div class="modal fade" id="KundeReallyDeleteModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Kunde l&ouml;schen</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    Sind Sie sicher, dass Sie den Kunden {{kundenCtrl.oneUser.id}} l&ouml;schen m&ouml;chten?
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-toggle="modal"  data-dismiss="modal" data-target="#KundeDeleteModal" ng-click="kundenCtrl.deleteKunde(k.id)">Ja</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Nein</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
 <div>
     <div class="panel panel-default">
-
         <div class="container">
             <div class="row">
+                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#KundePostModal">Kunde hinzuf&uuml;gen</button>
                 <div class="col-sm-6 col-sm-offset-3">
                     <div id="imaginary_container">
                         <div class="input-group stylish-input-group">
@@ -65,7 +184,6 @@
                 <th>Email</th>
             </tr>
             </thead>
-
                 <tbody>
                     <tr  ng-repeat="k in kundenCtrl.users | filter: filter.id">
                         <td>{{k.id}}</td>
@@ -73,16 +191,17 @@
                         <td>{{k.identity.nachname}}</td>
                         <td>{{k.identity.email}}</td>
                         <td>
-                            <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#KundeBearbeitenModal">
-                                bearbeiten
-                            </button>
+                            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#KundeInfoModal" ng-click="kundenCtrl.findKundeById(k.id)">Info</button>
+                            <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#KundePutModal" ng-click="kundenCtrl.findKundeById(k.id)">bearbeiten</button>
+                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#KundeReallyDeleteModal" ng-click="kundenCtrl.findKundeById(k.id)">l&ouml;schen</button>
                         </td>
                     </tr>
                 </tbody>
-
         </table>
     </div>
 </div>
+
+
 
 <!-- Kunde-bearbeiten-Modal -->
 <!--<div class='modal' id="Kunde-bearbeiten-Modal"ng-show='show'>-->
