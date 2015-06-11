@@ -14,21 +14,21 @@
                 <p>
                     <div class="form-group">
                         <label class="control-label col-sm-2">Vorname:</label>
-                        <input type="text" class="form-control" ng-model="kundenCtrl.oneUser.identity.vorname"/>
+                        <input type="text" class="form-control" ng-model="kundenCtrl.currentUser.identity.vorname"/>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-sm-2">Nachname:</label>
-                        <input type="text" class="form-control" ng-model="kundenCtrl.oneUser.identity.nachname">
+                        <input type="text" class="form-control" ng-model="kundenCtrl.currentUser.identity.nachname">
                      </div>
                     <div class="form-group">
                         <label class="control-label col-sm-2">EMail:</label>
-                        <input type="text" class="form-control" ng-model="kundenCtrl.oneUser.identity.email">
+                        <input type="text" class="form-control" ng-model="kundenCtrl.currentUser.identity.email">
                     </div>
                 </p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Schlie&szlig;en</button>
-                <button type="button" class="btn btn-primary" ng-click="kundenCtrl.updateIdentityKunde(kundenCtrl.oneUser.id, kundenCtrl.oneUser.identity.vorname, kundenCtrl.oneUser.identity.nachname, kundenCtrl.oneUser.identity.email)">Speichern</button>
+                <button type="button" class="btn btn-primary" ng-click="kundenCtrl.updateKunde(kundenCtrl.oneUser.id, kundenCtrl.oneUser.identity.vorname, kundenCtrl.oneUser.identity.nachname, kundenCtrl.oneUser.identity.email)">Speichern</button>
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
@@ -122,7 +122,7 @@
             </div>
             <div class="modal-body">
                 <p>
-                    Der Kunde {{kundenCtrl.oneUser.id}} wurde erfolgreich gel&ouml;scht.
+                    Der Kunde {{kundenCtrl.currentUser.id}} wurde erfolgreich gel&ouml;scht.
                 </p>
             </div>
             <div class="modal-footer">
@@ -141,11 +141,11 @@
             </div>
             <div class="modal-body">
                 <p>
-                    Sind Sie sicher, dass Sie den Kunden {{kundenCtrl.oneUser.id}} l&ouml;schen m&ouml;chten?
+                    Sind Sie sicher, dass Sie den Kunden {{kundenCtrl.currentUser.id}} l&ouml;schen m&ouml;chten?
                 </p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-toggle="modal"  data-dismiss="modal" data-target="#KundeDeleteModal" ng-click="kundenCtrl.deleteKunde(k.id)">Ja</button>
+                <button type="button" class="btn btn-default" data-toggle="modal"  data-dismiss="modal" data-target="#KundeDeleteModal" ng-click="kundenCtrl.deleteKunde()">Ja</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Nein</button>
             </div>
         </div><!-- /.modal-content -->
@@ -171,7 +171,7 @@
                 </div>
             </div>
         </div>
-
+        <br>
         <!-- Default panel contents -->
         <div class="panel-heading">Kunden</div>
         <!-- Table -->
@@ -192,8 +192,8 @@
                         <td>{{k.identity.email}}</td>
                         <td>
                             <button type="button" class="btn btn-info" data-toggle="modal" data-target="#KundeInfoModal" ng-click="kundenCtrl.findKundeById(k.id)">Info</button>
-                            <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#KundePutModal" ng-click="kundenCtrl.findKundeById(k.id)">bearbeiten</button>
-                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#KundeReallyDeleteModal" ng-click="kundenCtrl.findKundeById(k.id)">l&ouml;schen</button>
+                            <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#KundePutModal" ng-click="kundenCtrl.loadCurrentUser(k.id)">bearbeiten</button>
+                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#KundeReallyDeleteModal" ng-click="kundenCtrl.loadCurrentUser(k.id)">l&ouml;schen</button>
                         </td>
                     </tr>
                 </tbody>
