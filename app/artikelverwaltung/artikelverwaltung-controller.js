@@ -1,7 +1,7 @@
 (function () {
 
-    function artikelVerwCtrl(RestService){
-        var vm = this
+    function artikelVerwCtrl(RestService, WarenkorbService){
+        var vm = this;
 
         // TODO: nachsehen wie man diese Daten eventuell in die Funktion create Atikel verlagert
         vm.json = {
@@ -12,6 +12,14 @@
 
         // liefert alle Artikel im Katalog
         vm.katalog = RestService.getProductKatalog().query();
+
+        vm.getWarenkorb = function(){
+            vm.list = WarenkorbService.list();
+        }
+
+        vm.addWarenkorb = function(){
+            WarenkorbService.add({bezeichnung: vm.currentArtikel.bezeichnung, preis: vm.currentArtikel.preis, rating: vm.currentArtikel.rating, ausgesondert: vm.currentArtikel.ausgesondert});
+        }
 
 
         // neuer Artikel anlegen

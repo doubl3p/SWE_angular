@@ -3,5 +3,5 @@
     'use strict';
 
     angular.module('webapp',
-        ['reg', 'bestellVerw', 'kundenVerw', 'artikelVerw', 'ui.router', 'ngResource', 'restService'])
+        ['reg', 'bestellVerw', 'kundenVerw', 'artikelVerw', 'ui.router', 'ngResource', 'restService', 'warenkorbService'])
 })();

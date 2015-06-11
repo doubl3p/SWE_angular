@@ -21,7 +21,7 @@
         }
 
         this.createKunde = function() {
-            var data = $resource(sv.basic + '/registrierung', {}, {update: {method: 'POST'}}, {get: {method: 'GET', headers: {Authorization: sv.basicAuth}}});
+            var data = $resource(sv.basic + '/registrierung', {}, {get: {method: 'GET', headers: {Authorization: sv.basicAuth}}});
             return data;
         }
 

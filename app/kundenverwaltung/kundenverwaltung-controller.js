@@ -5,27 +5,31 @@
 
         s.filter = {id: ''};
 
-        s.json =  {
-            type: "F",
-            identity: {
-                loginname: "jules",
-                enabled: true,
-                nachname: "schnurr",
-                vorname: "julian",
-                email: "Schnurr-Julian-web@web.de",
-                adresse: {
-                plz: "77794",
-                    ort: "Lautenbach",
-                    strasse: "Vorder-Winterbach",
-                    hausnr: "18a"
+        s.json =    {
+            "type": "F",
+            "identity": {
+                "loginname": "string",
+                "enabled": true,
+                "expirationDate": "2015-06-11T11:01:16.263Z",
+                "password": "string",
+                "passwordWdh": "string",
+                "nachname": "string",
+                "vorname": "string",
+                "email": "string@strinbgf.de",
+                "adresse": {
+                    "plz": "77777",
+                    "ort": "string",
+                    "strasse": "string",
+                    "hausnr": "4"
                 }
             },
-            kategorie: 1,
-            seit: "2015-06-09" ,
-            newsletter: false,
-            agbAkzeptiert: true,
-            bestellungUri: ""
-        };
+            "seit": "2015-06-11T11:01:16.263Z",
+            "agbAkzeptiert": true
+        }
+
+
+
+
 
         // das hier geht wunderbar und ruft z.B. alle Kunden ab, die es gibt.
         s.users = RestService.getKunden().query();
@@ -40,39 +44,47 @@
             this.oneUser = RestService.getKunden().get({id: id});
         };
 
-        s.updateKunde = function() {
-            RestService.updateKunde().update({
-                                    id: s.currentUser.id,
-                                    identity:   {
-
-                                        vorname: s.currentUser.identity.vorname,
-                                        nachname: s.currentUser.identity.nachname,
-                                        email: s.currentUser.identity.email,
-
-                                        adresse:    {
-                                                    plz: s.currentUser.identity.adresse.plz,
-                                                    ort: s.currentUser.identity.adresse.ort,
-                                                    strasse: s.currentUser.identity.adresse.strasse,
-                                                    hausnr: s.currentUser.identity.adresse.hausnr}},
-                                    kategorie: s.currentUser.kategorie,
-                                    seit: s.currentUser.seit,
-                                    newsletter: s.currentUser.newsletter,
-                                    agbAkzeptier: s.currentUser.agbAkzeptiert});
-
-        };
-
         s.deleteKunde = function(id) {
             RestService.deleteKunde.delete({id: s.currentUser.id});
         };
+
+        this.createKunde = function (){
+            RestService.createKunde().save(s.json)
+        };
+        //s.updateKunde = function() {
+            //RestService.updateKunde().update({
+            //                        id: s.currentUser.id,
+            //                        identity:   {
+            //
+            //                            vorname: s.currentUser.identity.vorname,
+            //                            nachname: s.currentUser.identity.nachname,
+            //                            email: s.currentUser.identity.email,
+            //
+            //                            adresse:    {
+            //                                        plz: s.currentUser.identity.adresse.plz,
+            //                                        ort: s.currentUser.identity.adresse.ort,
+            //                                        strasse: s.currentUser.identity.adresse.strasse,
+            //                                        hausnr: s.currentUser.identity.adresse.hausnr}},
+            //                        kategorie: s.currentUser.kategorie,
+            //                        seit: s.currentUser.seit,
+            //                        newsletter: s.currentUser.newsletter,
+            ////                        agbAkzeptier: s.currentUser.agbAkzeptiert});
+            //
+            //RestService.updateKunde().save(
+        //  );
+        //
+        //
+        //
+        //};
+
+
 
         //this.addKunde = function() {
         //    RestService.createKunde().save({identity: {loginname: "jules", enabled: "true", nachname: "schnurr", vorname: "julian", email: "Schnurr-Julian-web@web.de"},
         //        adresse: {plz:"77794", ort: "Lautenbach", strasse: "Vorder-Winterbach", hausnr: "18a"}, seit: "2015-06-09" });
         //
         //}
-        this.createKunde = function (){
-            RestService.createKunde().save(s.json)
-        };
+
     }
 
 
