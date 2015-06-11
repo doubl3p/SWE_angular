@@ -51,31 +51,34 @@
         this.createKunde = function (){
             RestService.createKunde().save(s.json)
         };
-        //s.updateKunde = function() {
-            //RestService.updateKunde().update({
-            //                        id: s.currentUser.id,
-            //                        identity:   {
-            //
-            //                            vorname: s.currentUser.identity.vorname,
-            //                            nachname: s.currentUser.identity.nachname,
-            //                            email: s.currentUser.identity.email,
-            //
-            //                            adresse:    {
-            //                                        plz: s.currentUser.identity.adresse.plz,
-            //                                        ort: s.currentUser.identity.adresse.ort,
-            //                                        strasse: s.currentUser.identity.adresse.strasse,
-            //                                        hausnr: s.currentUser.identity.adresse.hausnr}},
-            //                        kategorie: s.currentUser.kategorie,
-            //                        seit: s.currentUser.seit,
-            //                        newsletter: s.currentUser.newsletter,
-            ////                        agbAkzeptier: s.currentUser.agbAkzeptiert});
-            //
-            //RestService.updateKunde().save(
-        //  );
-        //
-        //
-        //
-        //};
+        s.updateKunde = function() {
+            RestService.updateKunde().update({
+                "type": "F",
+                //"id": 303,
+                "identity": {
+                    "loginname": "Duci",
+                    "enabled": true,
+                    "expirationDate": "2015-06-11T11:01:16.263Z",
+                    "password": "123456",
+                    "passwordWdh": "123456",
+                    "nachname": "Le",
+                    "vorname": "Duc",
+                    "email": "leduc@hs-karlsruhe.de.de",
+                    "adresse": {
+                        "plz": "77777",
+                        "ort": "Karlsruhe",
+                        "strasse": "Straﬂestraﬂe",
+                        "hausnr": "4"
+                    }
+                },
+                "seit": "2015-06-11T11:01:16.263Z",
+                "agbAkzeptiert": true
+            }
+          );
+
+
+
+        };
 
 
 

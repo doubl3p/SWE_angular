@@ -16,6 +16,9 @@
         vm.getWarenkorb = function(){
             vm.list = WarenkorbService.list();
         }
+        vm.getGesamtpreis = function(){
+           vm.gesamtpreis = WarenkorbService.getGesamtpreis();
+        }
 
         vm.addWarenkorb = function(){
             WarenkorbService.add({bezeichnung: vm.currentArtikel.bezeichnung, preis: vm.currentArtikel.preis, rating: vm.currentArtikel.rating, ausgesondert: vm.currentArtikel.ausgesondert});

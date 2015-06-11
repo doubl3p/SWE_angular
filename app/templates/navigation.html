@@ -16,14 +16,24 @@
 
             <ul class="nav navbar-nav navbar-right" ng-controller="artikelVerwCtrl as artikelCtrl">
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" ng-click="artikelCtrl.getWarenkorb()">Warenkorb <span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" ng-click="artikelCtrl.getWarenkorb();artikelCtrl.getGesamtpreis()">Warenkorb <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
-                        <!-- Artikel bei Klick/MouseOver minimiert in Liste anzeigen-->
-                        <!--Eventuell Gesamtbetrag ganzt unten anzeigen-->
-                        <div ng-repeat = "artikel in artikelCtrl.list">
-                            <li><a>{{artikel.bezeichnung}}</a></li>
-                        </div>
-                        <!--<li><a>{{wk[0].bezeichnung}}</a></li>-->
+                        <table class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>Bezeichnung</th>
+                                <th>Preis</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr ng-repeat = "artikel in artikelCtrl.list">
+                                <td>{{artikel.bezeichnung}}</td>
+                                <td>{{artikel.preis}}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <li class="divider"></li>
+                        <p><b>&nbsp; Gesamtpreis: </b> {{artikelCtrl.gesamtpreis}}</p>
                     </ul>
                 </li>
             </ul>
